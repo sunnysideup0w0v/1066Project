@@ -15,15 +15,16 @@ a {
     color: inherit;
 }
 #header {
-    padding-top: 10px;
+    padding-top: 20px;
     width: 100%;
     overflow: hidden;
     position: fixed;
     background-color: #fff;
     z-index: 9999;
     h1 {
+        display: inline-block;
         a {
-            padding: 0 50px;
+            padding: 0 100px;
             display: flex;
             align-items: center;
             .main {
@@ -40,10 +41,15 @@ a {
     }
     .util {
         position: absolute;
-        right: 50px;
+        right: 100px;
         top: 20px;
         font-size: 1.6rem;
         ul {
+            .lang {
+                .on {
+                    color: #4A9CA2;
+                }
+            }
             li {
                 display: inline-block;
                 padding: 10px 5px;
@@ -79,6 +85,39 @@ a {
                         transform: scaleX(1);
                     }
                 }
+            }
+        }
+    }
+}
+#footer {
+    width: 100%;
+    background-color: #555;
+    color: #d9d9d9;
+    font-size: 1.4rem;
+    padding: 50px 260px 20px;
+    .copyright {
+        margin-bottom: 20px;
+    }
+    address {
+        li {
+            margin-bottom: 15px;
+        }
+        span {
+            display: inline-block;
+            width: 60px;
+            position: relative;
+            margin-right: 15px;
+            &:after {
+                content: "";
+                display: block;
+                height: 80%;
+                width: 1px;
+                background-color: #d9d9d9;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0.85;
             }
         }
     }

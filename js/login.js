@@ -1,10 +1,11 @@
+console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
 $('.loginBtn').click(function() {
 
     // 서버에 입력한 이메일/비번으로 로그인 시도
 
     // 입력한 이메일 / 비번 변수에 저장
-    let email = $('#idInputTxt').val()
-    let pw = $('#pwInputTxt').val()
+    let email = $('#idInputTxt').val();
+    let pw = $('#pwInputTxt').val();
 
     // 로그인 요청 데이터를 담아둘 FormData 클래스
     const form = new FormData()
@@ -28,11 +29,12 @@ $('.loginBtn').click(function() {
             // 쿠키에 저장 : $.cookie('항목이름', 저장변수)
             // 쿠키에 있는 값 조회 : $.cookie('항목이름')
 
-            $(location).attr('href', "index.html")
+            $(location).attr('href', "index.html");
 
         })
         .catch(function (error) {
             // 실패시 error의 응답에 담긴 message를 얼럿으로
+            console.log(error)
             alert(error.response.data.message)
         })
 

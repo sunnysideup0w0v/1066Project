@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script defer src="../js/main.js"></script>
 </head>
 <body>
@@ -26,7 +29,7 @@
             <h2 class="hidden">Global Navigation Bar</h2>
             <ul>
                 <li><a href="">10/66 소개</a></li>
-                <li><a href="">10/66 시작하기</a></li>
+                <li><a href="./challenge.html">10/66 시작하기</a></li>
                 <li><a href="">10/66 후기</a></li>
             </ul>
         </nav>
@@ -38,7 +41,14 @@
                         <li><a href="">ENG</a></li>
                     </ul>
                 </li>
-                <li><a href="../html/login.html">로그인<i class="xi-user"></i></a></li>
+                <li>
+                    <div class="login">
+                        <a href="../html/login.html">로그인<i class="xi-user"></i></a>
+                    </div>
+                    <div class="nick">
+                        <p class="nickTxt">닉네임 나올 자리</p>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>

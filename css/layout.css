@@ -1,6 +1,5 @@
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -34,12 +33,8 @@ a {
 
 #header h1 a {
   padding: 0 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 #header h1 a .main {
@@ -96,15 +91,12 @@ a {
   bottom: 0;
   left: 0;
   background-color: #4A9CA2;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: 0.25s ease;
+  transform: scaleX(0);
   transition: 0.25s ease;
 }
 
 #header #gnb ul li:hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 #footer {
@@ -139,7 +131,6 @@ a {
   position: absolute;
   right: 0;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   opacity: 0.85;
 }

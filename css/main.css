@@ -1,0 +1,69 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.5;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#mainVisual {
+  padding-top: 250px;
+  position: relative;
+}
+
+#mainVisual .swiper-wrapper {
+  width: 100%;
+  height: 600px;
+}
+
+#mainVisual .swiper-wrapper .swiper-slide {
+  position: relative;
+}
+
+#mainVisual .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+#mainVisual .swiper-wrapper .swiper-slide .txtBox {
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  color: #fff;
+}
+
+#mainVisual .swiper-button-prev,
+#mainVisual .swiper-button-next {
+  position: absolute;
+  top: 60%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: 0;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #333;
+}
+
+#mainVisual .swiper-button-prev {
+  left: 150px;
+}
+
+#mainVisual .swiper-button-next {
+  right: 150px;
+}

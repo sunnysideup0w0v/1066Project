@@ -30,6 +30,11 @@ axiosInstance.get('/project')
             $(".desc").text(`${project.description}`)
         }
     }
+    $(".seeOthersBtn").click(function(){
+        // 주소창에 프로젝트id를 덧붙여서 상세화면으로 이동
+
+        $(location).attr('href', `projectOthers.html?id=${projectId}`)
+    })
     
  })
  .catch(function(err){

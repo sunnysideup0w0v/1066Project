@@ -1,6 +1,5 @@
 .container {
   min-height: 100vh;
-  margin-bottom: 150px;
 }
 
 .container .title {
@@ -32,17 +31,25 @@
   text-align: center;
 }
 
+.container .others .list {
+  padding-left: 60px;
+  margin: 50px 0;
+}
+
 .container .others .list li {
+  padding: 5px;
   display: inline-block;
-  width: 335px;
-  height: 255px;
-  margin: 10px;
-  border: 1px solid #333;
+  width: 630px;
+  height: 200px;
+  margin: 15px;
+  border: 1px solid #FFCC4A;
+  position: relative;
 }
 
 .container .others .list li .imgBox {
-  width: 100%;
-  height: 200px;
+  width: 40%;
+  height: 190px;
+  overflow: hidden;
 }
 
 .container .others .list li .imgBox img {
@@ -51,6 +58,36 @@
 }
 
 .container .others .list li .txtBox {
-  line-height: 55px;
-  padding-left: 15px;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  height: 100%;
+  padding: 20px;
+}
+
+.container .others .list li .txtBox .nick {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.container .others .list li .txtBox .content {
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.container .others .list li .txtBox button {
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  padding: 5px 20px 5px 15px;
+  background-color: #FFCC4A;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.container .others .list li .txtBox button span {
+  font-size: 16px;
+  margin-left: 10px;
 }

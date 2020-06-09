@@ -56,7 +56,6 @@
   border: 1px solid #FFCC4A;
   margin: 0 10px;
   border-radius: 10px;
-  -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
   cursor: pointer;
 }

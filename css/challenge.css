@@ -28,7 +28,6 @@ h2 {
 
 .ingProject ul li .imgBox img {
   width: 100%;
-  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
@@ -52,20 +51,18 @@ h2 {
 .ingProject ul li button {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   margin-top: 10px;
   border: 2px solid #FFCC4A;
   padding: 5px 15px;
   border-radius: 10px;
   font-weight: 700;
-  -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
+  cursor: pointer;
 }
 
 .ingProject ul li:hover img {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .ingProject ul li:hover button {

@@ -20,6 +20,7 @@ axiosInstance.get('/project')
     let projects = res.data.data.projects;
     let searchParams = new URLSearchParams(window.location.search);
     let projectId = searchParams.get('id');
+    console.log("projectId",projectId)
     for(let i=0;i<projects.length;i++){
         if(projects[i].id == projectId){
             console.log(projects[i])
@@ -32,8 +33,9 @@ axiosInstance.get('/project')
     }
     $(".seeOthersBtn").click(function(){
         // 주소창에 프로젝트id를 덧붙여서 상세화면으로 이동
-
-        $(location).attr('href', `projectOthers.html?id=${projectId}`)
+        $(this).attr('project_id');
+        console.log(projectId)
+        $(location).attr('href', `projectOthers.html?project_id=${projectId}`)
     })
     
  })

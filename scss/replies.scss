@@ -1,0 +1,99 @@
+.container {
+    .origin {
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .imgBox {
+            height: 520px;
+            width: 930px;
+            background-color: #d9d9d9;
+            margin: 50px auto;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        .txtBox {
+            text-align: center;
+            .date {
+                font-size: 1.4rem;
+            }
+            .nick {
+                font-size: 1.8rem;
+            }
+            .content {
+                margin-top: 15px;
+                font-size: 1.8rem;
+                color: #000;
+            }
+        }
+    }
+    .list {
+        width: 100%;
+        margin: 50px 0;
+        .inputBox {
+            width: 100%;
+            background-color: #FFCC4A;
+            height: 120px;
+            padding: 15px;
+            p {
+                margin-bottom: 10px;
+            }
+            input {
+                width: calc(100% - 100px);
+                height: 60px;
+                resize: none;
+                padding: 5px 5px 5px 10px;
+                outline: none;
+                border: none;
+            }
+            button {
+                width: 80px;
+                height: 50px;
+                background-color: #f8f8f8;
+                margin-left: 10px;
+            }
+        }
+        ul {
+            width: 100%;
+            li {
+                border-bottom: 1px solid #d9d9d9;
+                padding: 10px 20px;
+                position: relative;
+                &:last-child {
+                    border: none;
+                }
+                .imgBox {
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    left: 20px;
+                    top: 10px;
+                    background-color: #333;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .txtBox {
+                    padding-left: 70px;
+                    margin-bottom: 10px;
+                    height: 40px;
+                    .nick {
+                        font-size: 1.6rem;
+                    }
+                    .replyDate {
+                        font-size: 1.3rem;
+                        margin-bottom: 14px;
+                        color: #777;
+                    }
+                    .comment {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

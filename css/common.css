@@ -27,8 +27,8 @@ h2 {
 }
 .container {
     width: 1440px;
-    margin: 0 auto;
     overflow: hidden;
+    margin: 0 auto;
     padding-top: 150px;
 }
 .color {

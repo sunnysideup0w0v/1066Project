@@ -28,13 +28,13 @@
             li {
                 padding: 5px;
                 display: inline-block;
-                width: 630px;
+                width: 400px;
                 height: 200px;
                 margin: 15px;
                 border: 1px solid #FFCC4A;
                 position: relative;
                 .imgBox {
-                    width: 40%;
+                    width: 60%;
                     height: 190px;
                     overflow: hidden;
                     img {
@@ -45,7 +45,7 @@
                 .txtBox {
                     position: absolute;
                     top: 0;
-                    left: 40%;
+                    left: 60%;
                     height: 100%;
                     padding: 20px;
                     .nick {
@@ -56,19 +56,31 @@
                     .content {
                         font-size: 1.8rem;
                         color: #000;
+                        height: 50px;
+                        width: 100px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        word-break: keep-all;
+
                     }
                     button {
                         cursor: pointer;
                         position: absolute;
                         left: 20px;
                         bottom: 20px;
-                        padding: 5px 20px 5px 15px;
+                        width: 120px;
+                        height: 30px;
+                        line-height: 30px;
                         background-color: #FFCC4A;
                         border-radius: 10px;
                         font-size: 18px;
                         span {
                             font-size: 16px;
-                            margin-left: 10px;
+                          
+                              margin-left: 10px;
+                        }
+                        &.reply {
+                            bottom: 60px;
                         }
                     }
                 }

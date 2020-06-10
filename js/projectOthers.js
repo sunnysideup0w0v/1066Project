@@ -16,6 +16,7 @@ console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
 
 let searchParams = new URLSearchParams(window.location.search);
 let projectId = searchParams.get('project_id');
+let projectTitle;
 console.log("projectId",projectId);
 
 axiosInstance.get('/project')
@@ -24,6 +25,7 @@ axiosInstance.get('/project')
     for(let i=0;i<projects.length;i++){
         if(projects[i].id == projectId){
             let project = projects[i];
+            projectTitle = project.title;
             $("h2 .title").text(` ${project.title} 프로젝트`);
             $(".desc").text(`${project.description}`)
         }
@@ -40,6 +42,14 @@ axiosInstance.get('/project')
      console.log(err)
  })
 
+let now = new Date();
+let year = now.getFullYear();
+let month = String(now.getMonth()+1).padStart(2,'0')
+let date = String(now.getDate()).padStart(2,'0')
+
+let todayFullDate = `${year}-${month}-${date}`
+console.log(todayFullDate)
+
 $("#dateInput").change(function(){
     let proofDate = $(this).val();
     axiosInstance.get(`/project/${projectId}?proof_date=${proofDate}`,{
@@ -49,42 +59,78 @@ $("#dateInput").change(function(){
     })
         .then(function(res){
             let project = res.data.data.project.proofs;
+            $(".others .list").empty();
             console.log(project)
             for(let i=0;i<project.length;i++){
                 let count = project[i].like_count;
                 console.log(count)
-                let buttonTitle = "♡"
+                let buttonTitle = "♡";
+                let replyCount = project[i].reply_count;
 
                 if (project[i].my_like) {
                     buttonTitle = "♥"
                 }
                 let images = project[i].images;
-                if(images.length>0){
-                    $(".others .list").append(`
-                        <li class="others" proof_id=${project[i].id}>
-                            <div class="imgBox">
-                                <img src="${project[i].images[0].img_url}" alt="">
-                            </div>
-                            <div class="txtBox">
-                                <p class="nick">${project[i].user.nick_name}</p>
-                                <p class="content">${project[i].content}</p>
-                                <button class="likeBtn"><span class="btnTitle">${buttonTitle}</span><span class="likeCount">${count}</span></button>
-                            </div>
-                        </li>
-                    `)
+                if(replyCount>0){
+                    if(images.length>0){
+                        $(".others .list").append(`
+                            <li class="others" proof_id=${project[i].id}>
+                                <div class="imgBox">
+                                    <img src="${project[i].images[0].img_url}" alt="">
+                                </div>
+                                <div class="txtBox">
+                                    <p class="nick">${project[i].user.nick_name}</p>
+                                    <p class="content">${project[i].content}</p>
+                                    <button class="reply">Reply(${replyCount})</button>
+                                    <button class="likeBtn"><span class="btnTitle">${buttonTitle}</span><span class="likeCount">${count}</span></button>
+                                </div>
+                            </li>
+                        `)
+                    } else {
+                        $(".others .list").append(`
+                            <li class="others" proof_id=${project[i].id}>
+                                <div class="imgBox">
+                                    <img src="../images/siriwan-arunsiriwattana-gs0coXLmjdI-unsplash.jpg" alt="">
+                                </div>
+                                <div class="txtBox">
+                                    <p class="nick">${project[i].user.nick_name}</p>
+                                    <p class="content">${project[i].content}</p>
+                                    <button class="reply">Reply(${replyCount})</button>
+                                    <button class="likeBtn"><span class="btnTitle">${buttonTitle}</span><span class="likeCount">${count}</span></button>
+                                </div>
+                            </li>
+                        `)
+                    }
                 } else {
-                    $(".others .list").append(`
-                        <li class="others" proof_id=${project[i].id}>
-                            <div class="imgBox">
-                                <img src="../images/siriwan-arunsiriwattana-gs0coXLmjdI-unsplash.jpg" alt="">
-                            </div>
-                            <div class="txtBox">
-                                <p class="nick">${project[i].user.nick_name}</p>
-                                <p class="content">${project[i].content}</p>
-                                <button class="likeBtn"><span class="btnTitle">${buttonTitle}</span><span class="likeCount">${count}</span></button>
-                            </div>
-                        </li>
-                    `)
+                    if(images.length>0){
+                        $(".others .list").append(`
+                            <li class="others" proof_id=${project[i].id}>
+                                <div class="imgBox">
+                                    <img src="${project[i].images[0].img_url}" alt="">
+                                </div>
+                                <div class="txtBox">
+                                    <p class="nick">${project[i].user.nick_name}</p>
+                                    <p class="content">${project[i].content}</p>
+                                    <button class="reply">Reply</button>
+                                    <button class="likeBtn"><span class="btnTitle">${buttonTitle}</span><span class="likeCount">${count}</span></button>
+                                </div>
+                            </li>
+                        `)
+                    } else {
+                        $(".others .list").append(`
+                            <li class="others" proof_id=${project[i].id}>
+                                <div class="imgBox">
+                                    <img src="../images/siriwan-arunsiriwattana-gs0coXLmjdI-unsplash.jpg" alt="">
+                                </div>
+                                <div class="txtBox">
+                                    <p class="nick">${project[i].user.nick_name}</p>
+                                    <p class="content">${project[i].content}</p>
+                                    <button class="reply">Reply</button>
+                                    <button class="likeBtn"><span class="btnTitle">${buttonTitle}</span><span class="likeCount">${count}</span></button>
+                                </div>
+                            </li>
+                        `)
+                    }
                 }
             }
             $('.likeBtn').click(function() {
@@ -132,12 +178,28 @@ $("#dateInput").change(function(){
                         alert(error.response.data.message)
                     })
             })
+            $('.reply').click(function() {
+                        
+                // 어떤 인증글을 상세히 보러 이동할건지 id를 추출
+                // 눌린 버튼의 조상중 li를 찾고, 그 속성중 proof_id 에 적힌 값 추출
+                let proofId = $(this).parents('li').attr('proof_id')
+                console.log('눌린 버튼의 인증글id : ', proofId)
+
+                // 해당 인증글 상세보기 화면으로 이동.
+                // query파라미터로 몇번글인지 전달.
+                $(location).attr('href', `replies.html?project_id=${projectTitle}&proof_id=${proofId}`) 
+
+            })
+            
         })
         .catch(function(err){
             console.log(err)
         })
 })
 
+
+$("#dateInput").val(todayFullDate)
+$("#dateInput").trigger('change')
 
 
 // $("#dateInput").change(function(){

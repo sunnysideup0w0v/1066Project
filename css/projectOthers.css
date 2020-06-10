@@ -39,7 +39,7 @@
 .container .others .list li {
   padding: 5px;
   display: inline-block;
-  width: 630px;
+  width: 400px;
   height: 200px;
   margin: 15px;
   border: 1px solid #FFCC4A;
@@ -47,7 +47,7 @@
 }
 
 .container .others .list li .imgBox {
-  width: 40%;
+  width: 60%;
   height: 190px;
   overflow: hidden;
 }
@@ -60,7 +60,7 @@
 .container .others .list li .txtBox {
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 60%;
   height: 100%;
   padding: 20px;
 }
@@ -74,6 +74,11 @@
 .container .others .list li .txtBox .content {
   font-size: 1.8rem;
   color: #000;
+  height: 50px;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
 }
 
 .container .others .list li .txtBox button {
@@ -81,7 +86,9 @@
   position: absolute;
   left: 20px;
   bottom: 20px;
-  padding: 5px 20px 5px 15px;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
   background-color: #FFCC4A;
   border-radius: 10px;
   font-size: 18px;
@@ -90,4 +97,8 @@
 .container .others .list li .txtBox button span {
   font-size: 16px;
   margin-left: 10px;
+}
+
+.container .others .list li .txtBox button.reply {
+  bottom: 60px;
 }

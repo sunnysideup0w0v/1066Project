@@ -13,3 +13,7 @@ console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
       $("#header .util .nick").hide();
     }
 }); 
+
+$("#proofTodayBtn").click(function(){
+    alert("버튼눌렸따!!!")
+})

@@ -15,11 +15,12 @@ console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
 
 }); 
 
+let searchParams = new URLSearchParams(window.location.search);
+let projectId = searchParams.get('id');
+
 axiosInstance.get('/project')
  .then(function(res){
     let projects = res.data.data.projects;
-    let searchParams = new URLSearchParams(window.location.search);
-    let projectId = searchParams.get('id');
     console.log("projectId",projectId)
     for(let i=0;i<projects.length;i++){
         if(projects[i].id == projectId){
@@ -31,6 +32,9 @@ axiosInstance.get('/project')
             $(".desc").text(`${project.description}`)
         }
     }
+    $(".proofBtn").click(function(){
+        $(location).attr('href',`proofForm.html?project_id=${projectId}`)
+    })
     $(".seeOthersBtn").click(function(){
         // 주소창에 프로젝트id를 덧붙여서 상세화면으로 이동
         $(this).attr('project_id');
@@ -41,4 +45,19 @@ axiosInstance.get('/project')
  })
  .catch(function(err){
      console.log(err)
- })
+})
+
+$(".applyBtn").click(function(){
+    const form = new FormData();
+    form.append('project_id',projectId)
+
+    axiosInstance.post('/project',form)
+    .then(function(res){
+        console.log(res)
+        alert(res.data.message)
+    })
+    .catch(function(err){
+        console.log(err)
+        alert(err.response.data.message)
+    })
+})

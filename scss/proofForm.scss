@@ -9,12 +9,13 @@
         width: 920px;
         background-color: #d9d9d9;
         height: 500px;
+        overflow: hidden;
         margin: 30px auto;
         img {
             width: 100%;
         }
     }
-    .formBox {
+    .data {
         width: 920px;
         margin: auto;
         >div {
@@ -33,7 +34,7 @@
             width: calc(100% - 85px);
         }
     }
-    button {
+    #proofTodayBtn {
         width: 100%;
         height: 35px;
         line-height: 35px;

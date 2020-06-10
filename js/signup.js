@@ -1,5 +1,3 @@
-
-
 $('.signupBtn').click(function() {
     // 이메일 / 비번 / 닉네임 입력값을 각각의 변수에 저장
     let email = $('#emailEdt').val()

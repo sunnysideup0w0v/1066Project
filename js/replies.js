@@ -1,19 +1,3 @@
-console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
-  if($.cookie('userToken') == null || $.cookie('userToken') == undefined ){
-    console.log("not null")
-    $("#header .util .nick").hide();
-  } else {
-    $("#header .util .login").hide();
-  }
-
-  $("#header .util .nick").click(function(){
-    if(confirm("로그아웃 하시겠습니까?")){
-      $.removeCookie('userToken');
-      $("#header .util .login").show();
-      $("#header .util .nick").hide();
-    }
-}); 
-
 let searchParams = new URLSearchParams(window.location.search);
 let projectId = searchParams.get('project_id')
 let proofId = searchParams.get('proof_id');
@@ -41,10 +25,9 @@ let makeView = function(){
 
                 if(el.user.profile_images.length>0){
                     imgSrc = `"${el.user.profile_images[0].img_url}"`
-                    console.log("imgSrc",imgSrc)
                 }
 
-                let li = $(`<li>
+                let li = `<li>
                                 <div class="imgBox">
                                     <img src=${imgSrc} alt="">
                                 </div>
@@ -52,11 +35,9 @@ let makeView = function(){
                                     <p class="nick"><span class="nick">${el.user.nick_name}</span> <span class="replyDate">${el.created_at}</span></p>
                                     <p class="content">${el.content}</p>
                                 </div>
-                            </li>`)
+                            </li>`
                 $(".list ul").append(li)
             })
-        } else {
-            $(".list ul").empty();
         }
     })
     .catch(function(err){

@@ -1,5 +1,6 @@
 *, *:before, *:after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -36,8 +37,9 @@ a {
   width: 100%;
 }
 
-#mainVisual .swiper-wrapper .swiper-slide .txtBox {
+#mainVisual .swiper-wrapper .swiper-slide .textBox {
   top: 0;
+  left: 50%;
   z-index: 2;
   position: absolute;
   color: #fff;
@@ -47,12 +49,15 @@ a {
 #mainVisual .swiper-button-next {
   position: absolute;
   top: 60%;
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: 0;
   cursor: pointer;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #333;
 }
 
@@ -164,6 +169,7 @@ a {
 #epilogue .container .inner li a .imgBox img {
   height: 100%;
   width: 100%;
+  -webkit-transition: 0.45s ease;
   transition: 0.45s ease;
 }
 
@@ -177,11 +183,13 @@ a {
   padding: 5px 10px;
   border: 1px solid #FFCC4A;
   border-radius: 10px;
+  -webkit-transition: 0.45s ease;
   transition: 0.45s ease;
 }
 
 #epilogue .container .inner li:hover .imgBox img {
-  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 #epilogue .container .inner li:hover .txtBox P:nth-child(1) {

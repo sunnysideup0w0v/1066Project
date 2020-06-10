@@ -113,3 +113,22 @@
 .container .list ul li .txtBox .comment {
   font-size: 1.8rem;
 }
+
+.container .list ul li button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #e22c2c;
+  padding: 15px 20px;
+  font-size: 2.0rem;
+  border-radius: 5px;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+
+.container .list ul li button:hover {
+  background-color: #e22c2c;
+  color: #FFF;
+}

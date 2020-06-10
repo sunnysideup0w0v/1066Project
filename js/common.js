@@ -7,9 +7,10 @@ console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
   }
 
   $("#header .util .nick").click(function(){
-    if(confirm("로그아웃 하시겠습니까?")){
-      $.removeCookie('userToken');
-      $("#header .util .login").show();
-      $("#header .util .nick").hide();
-    }
+    // if(confirm("로그아웃 하시겠습니까?")){
+    //   $.removeCookie('userToken');
+    //   $("#header .util .login").show();
+    //   $("#header .util .nick").hide();
+    // }
+    $(location).attr('href','./myPage.html')
 }); 

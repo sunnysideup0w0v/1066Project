@@ -1,0 +1,40 @@
+.container {
+    min-height: 100vh;
+    .inner {
+        width: 100%;
+        background-color: #FFCC4A;
+        height: 300px;
+        text-align: center;
+        position: relative;
+        .imgBox {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            border-radius: 10%;
+            background-color: #d9d9d9;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            button {
+                position: absolute;
+                border-radius: 100px;
+                padding: 5px; 
+                background-color: rgba(255, 255, 255, 0.5);
+                color: #444;
+                right: 10px;
+                bottom: 10px;
+                font-size: 1.2rem;
+            }
+        }
+        input {
+            display: none;
+        }
+    }
+    .infoBox {
+        text-align: center;
+    }
+    .projectList {
+        text-align: center;
+    }
+}

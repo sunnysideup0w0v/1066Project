@@ -26,11 +26,13 @@ a {
                 width: 100%;
             }
             .textBox {
-                top: 0;
-                left: 50%;
+                bottom: 50px;
+                left: 50px;
                 z-index: 2;
                 position: absolute;
                 color: #fff;
+                font-size: 3.2rem;
+                font-weight: 700;
             }
         }
     }

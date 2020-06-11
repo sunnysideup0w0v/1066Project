@@ -1,4 +1,4 @@
-let setting = function() {
+let settingMyPage = function() {
     axiosInstance.get('/my_info',{
         params:{
             // 
@@ -8,7 +8,7 @@ let setting = function() {
         console.log(res)
         let userInfo = res.data.data.user
         console.log(userInfo)
-        $(".nick").text(userInfo.nick_name);
+        $(".infoBox .nick").text(userInfo.nick_name);
         $(".email").text(userInfo.email)
         $(".imgBox img").attr('src',userInfo.profile_images[(userInfo.profile_images.length)-1].img_url)
     })
@@ -17,7 +17,7 @@ let setting = function() {
     })
 }
 
-setting();
+settingMyPage();
 
 $(".imgBox button").click(function(){
     $("#fileInput").trigger('click');
@@ -46,11 +46,14 @@ $(".nickEdt").click(function(){
                 "nick_name":true
             }
         })
-        .then(function(){
+        .then(function(res){
             console.log(res)
         })
         .catch(function(err){
             console.log(err)
         })
+
+        $(".nick").addClass("on")
+        $(".nickInput").removeClass("on")
     }
 })

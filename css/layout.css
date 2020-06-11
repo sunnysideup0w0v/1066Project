@@ -21,7 +21,6 @@ a {
 #header {
   padding-top: 20px;
   width: 100%;
-  overflow: hidden;
   position: fixed;
   background-color: #fff;
   z-index: 9999;
@@ -55,13 +54,47 @@ a {
   font-size: 1.6rem;
 }
 
-#header .util ul .lang .on {
+#header .util .utilList .lang .on {
   color: #4A9CA2;
 }
 
-#header .util ul li {
+#header .util .utilList li {
   display: inline-block;
   padding: 10px 5px;
+}
+
+#header .util .quick {
+  position: absolute;
+  background-color: #fff;
+  width: 90px;
+  color: #666;
+  border: 1px solid #d9d9d9;
+  bottom: -110%;
+  right: -50%;
+  transform: translateX(-70%) scaleY(0);
+  transition: 0.3s ease;
+  transform-origin: 0 0;
+}
+
+#header .util .quick.on {
+  transform: translateX(-70%) scaleY(1);
+}
+
+#header .util .quick li {
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+#header .util .quick li:last-child {
+  border: none;
+}
+
+#header .util .quick li:hover {
+  background-color: #d9d9d9;
+  color: #4A9CA2;
 }
 
 #header #gnb {

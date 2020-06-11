@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span {
+            display: block;
+            background-color: #f00;
+            width: 3px;
+            height: 25px;
+            margin-left: 15px;
+            position: absolute;
+            border-radius: 100px;
+            transform: rotate(30deg);
+        }
+        span:nth-child(1) {
+            left: 15px;
+        }
+        span:nth-child(2) {
+            left: 30px;
+        }
+        span:nth-child(3) {
+            left: 45px;
+        }
+    </style>
 </head>
 <body>
-    <button>click</button>
-    <input type="file" name="" id="">
-    <script>
-        document.querySelector("button").addEventListener("click",function(){
-            document.querySelector("input").click();
-        })
-        document.querySelector("input").addEventListener("click",function(){
-            console.log("clicked")
-        })
-    </script>
+    <div>
+        <span></span> 
+        <span></span> 
+        <span></span>
+    </div>
 </body>
 </html>

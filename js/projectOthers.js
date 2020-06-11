@@ -10,7 +10,7 @@ axiosInstance.get('/project')
         if(projects[i].id == projectId){
             let project = projects[i];
             projectTitle = project.title;
-            $("h2 .title").text(` ${project.title} 프로젝트`);
+            $("h2 .title").text(` ${project.title} `);
             $(".desc").text(`${project.description}`)
         }
     }
@@ -33,6 +33,38 @@ let date = String(now.getDate()).padStart(2,'0')
 
 let todayFullDate = `${year}-${month}-${date}`
 console.log(todayFullDate)
+
+axiosInstance.get(`/project/${projectId}`,{
+    params: {
+        "need_user_list":true
+    }
+})
+.then(function(res){
+    let userList =res.data.data.project.ongoing_users;
+    userList.forEach(function(user){
+        console.log(user)
+        let li = $(`
+                    <li class="member">
+                        <div class="imgBox">
+                            <div class="mask">
+                                <img src="${user.profile_images[0].img_url}" alt="">
+                            </div>
+                        </div>
+                        <div class="infoBox">
+                            <p class="nick">${user.nick_name}</p>
+                            <p class="email">${user.email}</p>
+                        </div>
+                        <div class="progress">
+                            <p class="startDate"></p>
+                            <p class="progressdays"></p>
+                        </div>
+                    </li>`)
+        $(".memberList .list").append(li);
+    })
+})
+.catch(function(err){
+    console.log(err)
+})
 
 $("#dateInput").change(function(){
     let proofDate = $(this).val();
@@ -181,9 +213,22 @@ $("#dateInput").change(function(){
         })
 })
 
-
 $("#dateInput").val(todayFullDate)
 $("#dateInput").trigger('change')
+
+$(".title .date").click(function(){
+    $(".title .date").addClass("on")
+    $(".title .member").removeClass("on")
+    $(".others").addClass("on")
+    $(".memberList").removeClass("on")
+})
+$(".title .member").click(function(){
+    $(".title .member").addClass("on")
+    $(".title .date").removeClass("on")
+    $(".memberList").addClass("on")
+    $(".others").removeClass("on")
+})
+
 
 
 // $("#dateInput").change(function(){

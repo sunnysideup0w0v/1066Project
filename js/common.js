@@ -1,4 +1,4 @@
-console.log('쿠키에 저장된 토큰 : ', $.cookie('userToken'))
+
   if($.cookie('userToken') == null || $.cookie('userToken') == undefined ){
     console.log("not null")
     $("#header .util .nick").hide();

@@ -6,15 +6,27 @@
         h2 {
             margin-bottom: 5px;
         }
-        .desc {
-            font-size: 2.0rem;
-        }
-        .desc02 {
-            margin-top: 30px;
-            font-size: 3.0rem;
+        .selectBox {
+            p {
+                display: inline-block;
+                margin: 0 5px;
+                cursor: pointer;
+                &.on {
+                    color: #4A9CA2;
+                }
+            }
+            span {
+                font-size: 32px;
+                padding-left: 10px;
+           }
+            .desc02 {
+                margin-top: 30px;
+                font-size: 3.0rem;
+            }
         }
     }
     .others {
+        display: none;
         width: 100%;
         height: 100%;
         .input {
@@ -86,5 +98,63 @@
                 }
             }
         }
+    }
+    .memberList {
+        width: 100%;
+        min-height: 100vh;
+        display: none;
+        margin-top: 50px;
+        .list {
+            width: 100%;
+            height: 100%;
+            font-size: 1.8rem;
+            li {
+                border-bottom: 1px solid #d9d9d9;
+                font-size: 1.6rem;
+                padding: 15px;
+                vertical-align: middle;
+                > div {
+                    text-align: center;
+                    display: inline-block;
+                }
+                .imgBox {
+                    .mask {
+                        margin: auto;
+                        width: 50PX;
+                        height: 50px;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .infoBox {
+                    width: calc((100% - 150px)*0.5);
+                    p {
+                        width: 40%;
+                    }
+                }
+                .progress {
+                    width: calc((100% - 150px)*0.4);
+                    position: relative;
+                    p {
+                        width: 40%;
+                    }
+                }
+                p {
+                    display: inline-block;
+                }
+                &:first-child {
+                    background-color: #FFCC4A;
+                    border-top: 2px solid #333;
+                    border-bottom: 2px solid #333;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+    .on {
+        display: block;
     }
 }

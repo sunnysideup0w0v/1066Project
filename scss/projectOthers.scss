@@ -112,10 +112,11 @@
                 border-bottom: 1px solid #d9d9d9;
                 font-size: 1.6rem;
                 padding: 15px;
-                vertical-align: middle;
                 > div {
                     text-align: center;
                     display: inline-block;
+                    height: 100%;
+                    vertical-align: middle;
                 }
                 .imgBox {
                     .mask {

@@ -10,7 +10,7 @@ let setting = function() {
         console.log(userInfo)
         $(".nick").text(userInfo.nick_name);
         $(".email").text(userInfo.email)
-        $(".imgBox img").attr('src',userInfo.profile_images[0].img_url)
+        $(".imgBox img").attr('src',userInfo.profile_images[(userInfo.profile_images.length)-1].img_url)
     })
     .catch(function(err){
         console.log(err)
@@ -21,40 +21,36 @@ setting();
 
 $(".imgBox button").click(function(){
     $("#fileInput").trigger('click');
+})
+
+$("#fileInput").on("change",function(){
     const form = new FormData($("#fileForm")[0])
     console.log(form)
     axiosInstance.put('/user_profile_image',form)
     .then(function(res){
         console.log(res)
+        setting();
     })
     .catch(function(err){
         console.log(err)
     })
 })
 
-// $("#fileInput").on("change",function(){
-//     let image = $("#fileInput").val();
-//     const form = new FormData();
-//     form.append('profile_images',image)
-//     console.log(image)
-//     axiosInstance.put('/user_profile_image',form)
-//     .then(function(res){
-//         console.log(res)
-//     })
-//     .catch(function(err){
-//         console.log(err)
-//         alert(err)
-//     })
-// })
-
-$("#fileInput").click(function(){
-    const form = new FormData($("#fileForm")[0])
-
-    axiosInstance.put('/user_profile_image',form)
-    .then(function(res){
-        console.log(res)
-    })
-    .catch(function(err){
-        console.log(err)
-    })
+$(".nickEdt").click(function(){
+    if($(".nick").hasClass("on")){
+        $(".nick").removeClass("on")
+        $(".nickInput").addClass("on")
+    } else {
+        axiosInstance.patch('/user',{
+            params: {
+                "nick_name":true
+            }
+        })
+        .then(function(){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    }
 })

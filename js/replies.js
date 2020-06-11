@@ -13,7 +13,7 @@ let makeView = function(){
         $(".origin .txtBox .nick").text(proof.user.nick_name)
         $(".origin .txtBox .date").text(proof.proof_time)
         if(proof.images.length>0){
-            $(".origin .imgBox img").attr('src',proof.images[0].img_url)
+            $(".origin .imgBox img").attr('src',proof.images[(proof.images.length)-1].img_url)
         } else {
             $(".origin .imgBox img").attr('src',"../images/siriwan-arunsiriwattana-gs0coXLmjdI-unsplash.jpg")
         }
@@ -24,7 +24,7 @@ let makeView = function(){
                 let imgSrc = "../images/siriwan-arunsiriwattana-gs0coXLmjdI-unsplash.jpg";
 
                 if(el.user.profile_images.length>0){
-                    imgSrc = `"${el.user.profile_images[0].img_url}"`
+                    imgSrc = `"${el.user.profile_images[el.user.profile_images.length-1].img_url}"`
                 }
 
                 let li = `<li>

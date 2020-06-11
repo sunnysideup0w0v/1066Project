@@ -10,7 +10,7 @@ axiosInstance.get('/project')
         if(projects[i].id == projectId){
             let project = projects[i];
             projectTitle = project.title;
-            $("h2 .title").text(` ${project.title} `);
+            $("h2 .title").text(` ${project.title}`);
             $(".desc").text(`${project.description}`)
         }
     }
@@ -47,7 +47,7 @@ axiosInstance.get(`/project/${projectId}`,{
                     <li class="member">
                         <div class="imgBox">
                             <div class="mask">
-                                <img src="${user.profile_images[0].img_url}" alt="">
+                                <img src="${user.profile_images[user.profile_images.length-1].img_url}" alt="">
                             </div>
                         </div>
                         <div class="infoBox">

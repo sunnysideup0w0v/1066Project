@@ -55,8 +55,38 @@
   text-align: center;
 }
 
-.container .infoBox .nick {
+.container .infoBox .nickBox {
+  position: relative;
+  display: inline-block;
+}
+
+.container .infoBox .nickBox .nick {
   font-size: 2.4rem;
+  display: none;
+}
+
+.container .infoBox .nickBox .nick.on {
+  display: inline-block;
+}
+
+.container .infoBox .nickBox input {
+  display: none;
+  height: 35px;
+  padding: 5px;
+}
+
+.container .infoBox .nickBox input.on {
+  display: block;
+}
+
+.container .infoBox .nickBox button {
+  position: absolute;
+  font-size: 1.2rem;
+  background-color: #d9d9d9;
+  padding: 0 5px;
+  border-radius: 10px;
+  right: -40px;
+  bottom: 10px;
 }
 
 .container .infoBox .email {

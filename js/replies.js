@@ -24,7 +24,7 @@ let makeView = function(){
                 let imgSrc = "../images/siriwan-arunsiriwattana-gs0coXLmjdI-unsplash.jpg";
 
                 if(el.user.profile_images.length>0){
-                    imgSrc = `"${el.user.profile_images[el.user.profile_images.length-1].img_url}"`
+                    imgSrc = `"${el.user.profile_images[0].img_url}"`
                 }
 
                 let li = `<li>

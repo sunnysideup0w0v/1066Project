@@ -28,9 +28,15 @@
 </head>
 <body>
     <div>
-        <span></span> 
-        <span></span> 
-        <span></span>
+        <span class="span1"></span> 
+        <span class="span2"></span> 
+        <span class="span3"></span>
     </div>
+    <script>
+        for(let i=1;i<document.querySelectorAll("span").length+1;i++){
+            document.querySelector(`.span${i}`).style.opacity = 0.5;
+            console.log("did");
+        }
+    </script>
 </body>
 </html>

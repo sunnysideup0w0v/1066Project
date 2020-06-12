@@ -50,38 +50,40 @@ a {
                 }
             }
             li {
-                display: inline-block;
-                padding: 10px 5px;
+            display: inline-block;
+            padding: 10px 5px;
             }
-        }
-        .quick {
-            position: absolute;
-            background-color: #fff;
-            width: 90px;
-            color: #666;
-            border: 1px solid #d9d9d9;
-            bottom: -110%;
-            right: -50%;
-            transform: translateX(-70%) scaleY(0);
-            transition: 0.3s ease;
-            transform-origin: 0 0;
-            &.on {
-                transform: translateX(-70%) scaleY(1);
+            .accountList {
+                position: relative;
             }
-            li {
-                font-size: 1.2rem;
-                width: 100%;
-                height: 100%;
-                padding: 5px;
-                border-bottom: 1px solid #d9d9d9;
-                &:last-child {
-                    border: none;
-                }
-                &:hover {
-                    background-color: #d9d9d9;
-                    color: #4A9CA2;
-                }
-            }
+            // .quick {
+            //     position: absolute;
+            //     background-color: #fff;
+            //     width: 90px;
+            //     color: #666;
+            //     border: 1px solid #d9d9d9;
+            //     right: -50%;
+            //     transform: translateX(-50%) scaleY(0);
+            //     transition: 0.3s ease;
+            //     transform-origin: 0 0;
+            //     &.on {
+            //         transform: translateX(-50%) scaleY(1);
+            //     }
+            //     li {
+            //         font-size: 1.2rem;
+            //         width: 100%;
+            //         height: 100%;
+            //         padding: 5px;
+            //         border-bottom: 1px solid #d9d9d9;
+            //         &:last-child {
+            //             border: none;
+            //         }
+            //         &:hover {
+            //             background-color: #d9d9d9;
+            //             color: #4A9CA2;
+            //         }
+            //     }
+            // }
         }
     }
     #gnb {

@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="../js/custom_axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
     <script defer src="../js/myPage.js"></script>
     <script defer src="../js/common.js"></script>
 </head>
@@ -26,29 +27,67 @@
             <div class="inner">
             	<div class="imgBox">
                     <img src="" alt="">
-                    <button><i class="xi-camera"></i></button>
+                    <button class="edt"><i class="xi-camera"></i></button>
                 </div>
                 <form action="" id="fileForm">
                     <input type="file" name="profile_images" id="fileInput">
                 </form>
+                <div class="edtBtns">
+                    <button class="profileEdt">정보 수정하기</button>
+                    <button class="pwEdt">비밀번호 변경하기</button>
+                </div>
             </div>
             <div class="infoBox">
                 <div class="nickBox">
                     <p class="nick on">Nick</p>
                     <input type="text" class="nickInput">
-                    <button class="nickEdt">Edit</button>
+                    <button class="nickEdt edt">Edit</button>
                 </div>
                 <p class="email">Email</p>
             </div>
             <div class="projectList">
-                <p class="title">진행중인 프로젝트</p>
-                <ul class="list">
-                    <li>project01</li>
-                    <li>project02</li>
+                <p class="title">프로젝트 이력 확인하기</p>
+                <ul class="projectList">
+                    <li class="onGoingProjectList tabMenu on">
+                        <p class="projectTitle">진행중인 프로젝트</p>
+                    </li>
+                    <li class="CompleteProjectList tabMenu">
+                        <p class="projectTitle">완료한 프로젝트</p>
+                    </li>
+                    <li class="QuitProjectList tabMenu">
+                        <p class="projectTitle">중도 포기 프로젝트</p>
+                    </li>
+                </ul>
+                <ul class="menuList">
+                    <li class="menu">
+                        <div class="menuList">
+                            <ul></ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
+        </main>
+    </div>
+    <div class="popupWrap">
+        <div id="popup">
+            <p class="title">비밀번호 변경하기</p>
+            <div class="contents">
+                <label for="originPw">기존 비밀번호</label>
+                <input type="password" name="" id="originPw">
+                <p class="notice">기존 비밀번호를 입력해주세요</p>
+                <label for="newPw">새로운 비밀번호</label>
+                <input type="password" name="" id="newPw">
+                <p class="newPwNotice notice">비밀번호는 8자리 이상으로 설정해주세요</p>
+                <label for="checkNewPw">새로운 비밀번호 확인</label>
+                <input type="password" name="" id="checkNewPw">
+                <p class="checkNewPwNotice notice"></p>
+            </div>
+            <div class="footer">
+                <button class="btnChange">변경하기</button>
+                <button class="btnClose">변경 취소</button>
+            </div>
         </div>
-    </main>
+    </div>
     <footer id="footer">
         <p class="copyright">Copyrightⓒ2020 ToastEggsToasts All rights reserved.</p>
         <address>

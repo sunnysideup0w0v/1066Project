@@ -19,7 +19,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   overflow: hidden;
 }
 
@@ -40,6 +41,7 @@
   font-size: 1.2rem;
   cursor: pointer;
   border: 1px solid #d9d9d9;
+  display: none;
 }
 
 .container .inner input {
@@ -47,6 +49,21 @@
   left: 50%;
   bottom: 10px;
   opacity: 0;
+}
+
+.container .inner .edtBtns {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.container .inner .edtBtns button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  font-size: 1.3rem;
 }
 
 .container .infoBox {
@@ -86,6 +103,7 @@
   border-radius: 10px;
   right: -40px;
   bottom: 10px;
+  display: none;
 }
 
 .container .infoBox .email {
@@ -94,24 +112,108 @@
 }
 
 .container .projectList {
-  text-align: center;
-  margin-top: 50px;
+  width: 100%;
 }
 
-.container .projectList .title {
-  font-size: 2.4rem;
+.container .projectList .tabMenu {
+  display: inline-block;
 }
 
-.container .projectList .list {
+.container .projectList .tabMenu.on {
+  background-color: #d9d9d9;
+}
+
+.container .projectList .menuList {
+  min-height: 50vh;
+  width: 100%;
+  background-color: #d9d9d9;
+  padding: 30px;
+}
+
+.container .projectList .menuList div {
+  background-color: #fff;
   width: 100%;
   height: 100%;
-  border: 1px solid #333;
 }
 
-.container .projectList .list li {
+.popupWrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: none;
+}
+
+.popupWrap.show {
+  display: block;
+}
+
+#popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  z-index: 9997;
+}
+
+#popup .title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+#popup .contents {
+  min-height: 300px;
+  min-width: 400px;
+  background-color: #fff;
+}
+
+#popup .contents .notice {
+  font-size: 1.2rem;
+  color: #f00;
+  margin-bottom: 25px;
+}
+
+#popup .contents input {
+  display: block;
+  height: 30px;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+#popup .footer {
+  text-align: right;
+  padding-top: 10px;
+}
+
+#popup .footer button {
   display: inline-block;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  border: 1px solid #999;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #ffcc4ab2;
+  color: #333;
+  margin-left: 10px;
+}
+
+#popup .footer button:hover {
+  background-color: #ffcc4a;
+}
+
+#main.edt .edt {
+  display: block;
+}
+
+#main.edt .profileEdt {
+  display: none;
 }

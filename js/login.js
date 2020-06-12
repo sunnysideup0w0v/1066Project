@@ -28,9 +28,8 @@ $('.loginBtn').click(function() {
 
             // 쿠키에 저장 : $.cookie('항목이름', 저장변수)
             // 쿠키에 있는 값 조회 : $.cookie('항목이름')
-
+            
             $(location).attr('href', "index.html");
-
         })
         .catch(function (error) {
             // 실패시 error의 응답에 담긴 message를 얼럿으로

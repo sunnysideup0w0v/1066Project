@@ -1,20 +1,12 @@
-  if($.cookie('userToken') == null || $.cookie('userToken') == undefined ){
-    console.log("not null")
-    $("#header .util .nick").hide();
-  } else {
-    $("#header .util .login").hide();
-  }
-
-
 $("#header .util .nick").click(function(){
   $(".quick").toggleClass("on")
 }); 
 
-$(".myPage").click(function(){
+$(".nick").click(function(){
   $(location).attr('href','./myPage.html')
 })
 $(".pwChange").click(function(){
-  $(location).attr('href','./changePw.html')
+  $(location).attr('href','./myPage.html')
 })
 $(".logOut").click(function(){
   if(confirm("정말 로그아웃하시겠습니까?")){
@@ -34,9 +26,8 @@ let setting = function() {
       console.log(res)
       let userInfo = res.data.data.user
       console.log(userInfo)
-      $(".nick").text(userInfo.nick_name);
-      $(".email").text(userInfo.email)
-      $(".imgBox img").attr('src',userInfo.profile_images[(userInfo.profile_images.length)-1].img_url)
+      $("#header .nick").text(userInfo.nick_name);
+      $("#header .email").text(userInfo.email)
   })
   .catch(function(err){
       console.log(err)
@@ -44,3 +35,10 @@ let setting = function() {
 }
 
 setting();
+
+if($.cookie('userToken') == null || $.cookie('userToken') == undefined ){
+    console.log("not null")
+    $("#header .util .nick").hide();
+  } else {
+    $("#header .util .login").hide();
+  }

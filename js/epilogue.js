@@ -35,10 +35,9 @@ axiosInstance.get('/review',{
         $(".page .pageList").append($(`<li>${j+1}</li>`))
     }
     let pageList = $(".page .pageList li");
-    pageList.each((index,item)=>{
-        console.log(index)
-        index.addClass("on")
-    })
+    console.log(indexNum)
+    pageList.eq(indexNum-1).addClass("on")
+
     $(".page .pageList li").click(function(){
         let pageIndex = $(this).text();
         epilogueList.children().not(epilogueList.children()[0]).remove();
@@ -52,4 +51,5 @@ axiosInstance.get('/review',{
 })
 
 reviewListView(1);
+
 console.log($(".page .pageList").children())

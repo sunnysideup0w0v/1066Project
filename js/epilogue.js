@@ -52,4 +52,6 @@ axiosInstance.get('/review',{
 
 reviewListView(1);
 
-console.log($(".page .pageList").children())
+$(".epilogueRegisterBtn").click(function(){
+    $(location).attr('href','epilogueWrite.html')
+})

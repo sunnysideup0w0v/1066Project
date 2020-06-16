@@ -3,44 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>challenge</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/common.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/epilogue.css">
+    <link rel="stylesheet" href="../css/proofForm.css">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <!-- 커스터마이징한 axiosInstace 들고있는 파일 -->
     <script src="../js/custom_axios.js"></script>
-    <script defer src="../js/epilogue.js"></script>
+    <script defer src="../js/proofForm.js"></script>
     <script defer src="../js/common.js"></script>
 </head>
 <body>
-    <? include("../includes/header.html") ?>
+    <? include("../includes/header.html"); ?>
     <main id="main">
         <div class="container">
-            <h2><span class="color">10/66 프로젝트</span> 이용 후기</h2>
-            <ul class="epilogueList">
-                <li><a href="">
-                    <span class="no">No.</span>
-                    <span class="title">Title</span>
-                    <span class="writer">writer</span>
-                    <span class="date">Date</span>
-                </a></li>
-            </ul>
-            <button class="epilogueRegisterBtn">후기 작성하기</button>
-            <div class="page">
-                <ul class="pageList">
-                    
-                </ul>
-                <div class="btns">
-                    <button class="prevBtn"><i class="xi-angle-left-min"></i></button>
-                    <button class="nextBtn"><i class="xi-angle-right-min"></i></button>
-                </div>
-            </div>
+            <h2><span class="color">10/66 </span><span class="title">Title</span> 후기</h2>
+            
+            <button id="epilogueBtn">후기 남기기</button>
         </div>
     </main>
     <footer id="footer">

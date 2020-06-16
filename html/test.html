@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <style>
         span {
             display: block;
@@ -27,16 +28,28 @@
     </style>
 </head>
 <body>
-    <div>
-        <span class="span1"></span> 
-        <span class="span2"></span> 
-        <span class="span3"></span>
+    <div class="page">
+        <ul class="pageList">
+            
+        </ul>
+        <div class="btns">
+            <button class="prevBtn"><i class="xi-angle-left-min"></i></button>
+            <button class="nextBtn"><i class="xi-angle-right-min"></i></button>
+        </div>
     </div>
     <script>
-        for(let i=1;i<document.querySelectorAll("span").length+1;i++){
-            document.querySelector(`.span${i}`).style.opacity = 0.5;
-            console.log("did");
-        }
+        let totalPage = 2;
+for(let j=0;j<totalPage;j++){
+        $(".page .pageList").append(`<li>${j+1}</li>`)
+    }
+
+    $(".page .pageList li").click(function(){
+        let pageIndex = $(this).text();
+        epilogueList.children().not(epilogueList.children()[0]).remove();
+        reviewListView(pageIndex);
+        $(".pageList li").removeClass("on")
+        $(this).addClass("on")
+    })
     </script>
 </body>
 </html>

@@ -9,21 +9,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/proofForm.css">
+    <link rel="stylesheet" href="../css/epilogueDetail.css">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="../js/custom_axios.js"></script>
-    <script defer src="../js/proofForm.js"></script>
+    <script defer src="../js/epilogueDetail.js"></script>
     <script defer src="../js/common.js"></script>
 </head>
 <body>
     <? include("../includes/header.html"); ?>
     <main id="main">
         <div class="container">
-            <h2><span class="color">10/66 </span><span class="title">Title</span> 후기</h2>
-            
-            <button id="epilogueBtn">후기 남기기</button>
+            <h2><span class="color">10/66 프로젝트</span> 이용 후기</h2>
+            <div class="inner">
+                <div class="infoBox">
+                    <div class="clearFix">
+                        <div class="titleBox">
+                            <p class="titleTxt bold">Title</p>
+                            <p class="title">title will be appear here</p>
+                        </div>
+                        <div class="projectBox">
+                            <p class="projectTxt bold">Project</p>
+                            <p class="project">project title will be appear here</p>
+                        </div>
+                    </div>
+                    <div class="writerBox">
+                        <p class="writerTxt bold">Writer</p>
+                        <p class="writer">writer will be appear here</p>
+                    </div>
+                </div>
+                <div class="contentBox">
+                    <p class="content">content will be appear here</p>
+                </div>
+                <button id="okBtn"><i class="xi-angle-left"></i> 후기 목록으로 돌아가기</button>
+            </div>
         </div>
     </main>
     <footer id="footer">

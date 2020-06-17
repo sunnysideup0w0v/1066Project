@@ -95,16 +95,48 @@
     }
     .projectList {
         width: 100%;
+        margin-top: 50px;
+        margin-bottom: 150px;
+        .projectTitleTxt {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
         .tabMenu {
             display: inline-block;
+            padding: 15px 30px 30px;
+            font-size: 1.6rem;
+            position: relative;
+            &:hover {
+                &:before{
+                    transform: scaleX(1);
+                }
+            }
+            &::before {
+                display: block;
+                content: "";
+                width: 67%;
+                height: 2px;
+                background-color: #4A9CA2;
+                position: absolute;
+                bottom: 15px;
+                transform: scaleX(0);
+                transition: 0.25s ease;
+            }
             &.on {
-                background-color: #d9d9d9;
+                background-color: #4A9CA2;
+                &:hover {
+                    &:before{
+                        background-color: #fff;
+                        transform: scaleX(1);
+                    }
+                }
             }
         }
         .menuList {
             min-height: 50vh;
             width: 100%;
-            background-color: #d9d9d9;
+            background-color: #4A9CA2;
             padding: 30px;
             div {
                 background-color: #fff;

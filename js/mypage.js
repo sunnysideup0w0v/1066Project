@@ -1,7 +1,7 @@
-let settingMyPage = function() {
+let settingMyPage = function(status) {
     axiosInstance.get('/my_info',{
         params:{
-            // 
+            project_status: status
         }
     })
     .then(function(res){
@@ -16,7 +16,7 @@ let settingMyPage = function() {
         console.log(err)
     })
 }
-settingMyPage();
+settingMyPage('ALL');
 
 $(".profileEdt").click(function(){
     $("#main").addClass("edt")
@@ -149,4 +149,22 @@ $(".popupWrap .btnClose").click(function(){
         $("#newPw").val("")
         $("#checkNewPw").val("")
     }
+})
+
+$(".projectListFolder li").click(function(){
+    $(this).parent().children().removeClass("on")
+    $(this).addClass("on")
+    let catchStatus = $(this)[0].attributes.status;
+    console.log(catchStatus)
+    axiosInstance.get('/my_info',{
+        params: {
+            project_status: "ALL"
+        }
+    })
+    .then(function(res){
+        console.log(res)
+    })
+    .catch(function(err){
+        console.log(err)
+    })
 })

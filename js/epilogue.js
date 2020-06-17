@@ -9,15 +9,21 @@ let reviewListView = function(indexNum){
     })
     .then(function(res){
         let data = res.data.data.reviews;
-        data.forEach(item => {
-            i = ((indexNum-1)*10) + 1;
-            let li = `<li><a href="">
+        data.forEach((item,index) => {
+            i = ((indexNum-1)*10) + index + 1;
+            let li = `<li review_id=${item.id}>
             <span class="no">${i}</span>
             <span class="title">${item.title}</span>
             <span class="writer">${item.writer.nick_name}</span>
             <span class="date">2020-06-09</span>
-            </a></li>`
+            </li>`
             epilogueList.append(li)
+            return i;
+            
+        })
+        $(".epilogueList li").click(function(){
+            console.log("hi")
+            $(location).attr('href',`epilogueDetail.html?review_id=${$(this).attr('review_id')}`)
         })
     })
     .catch(function(err){

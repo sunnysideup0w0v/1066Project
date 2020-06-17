@@ -113,20 +113,56 @@
 
 .container .projectList {
   width: 100%;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.container .projectList .projectTitleTxt {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .container .projectList .tabMenu {
   display: inline-block;
+  padding: 15px 30px 30px;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.container .projectList .tabMenu:hover:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.container .projectList .tabMenu::before {
+  display: block;
+  content: "";
+  width: 67%;
+  height: 2px;
+  background-color: #4A9CA2;
+  position: absolute;
+  bottom: 15px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .container .projectList .tabMenu.on {
-  background-color: #d9d9d9;
+  background-color: #4A9CA2;
+}
+
+.container .projectList .tabMenu.on:hover:before {
+  background-color: #fff;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .container .projectList .menuList {
   min-height: 50vh;
   width: 100%;
-  background-color: #d9d9d9;
+  background-color: #4A9CA2;
   padding: 30px;
 }
 

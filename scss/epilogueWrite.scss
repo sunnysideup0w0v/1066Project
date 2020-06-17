@@ -5,9 +5,39 @@
     }
     .inputBox {
         border: 1px solid #d9d9d9;
-        min-height: calc(100vh - 150px);
-    }
-    input {
-        outline: none;
+        padding: 50px 30px;
+        margin-bottom: 100px;
+        label {
+            font-weight: 700;
+        }
+        .selectProject {
+            margin-bottom: 30px;
+        }
+        #titleBox {
+            height: 30px;
+            resize: none;
+            width: 100%;
+            padding: 10px 30px;
+            outline: none;
+            display: block;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        #contentBox {
+            height: 450px;
+            width: 100%;
+            outline: none;
+            padding: 10px;
+            line-height: 1.5;
+        }
+        #okBtn {
+            padding: 10px 15px;
+            border: 1px solid #333;
+            transition: 0.25s ease;
+            &:hover {
+                background-color: #333;
+                color: #fff;
+            }
+        }
     }
 }

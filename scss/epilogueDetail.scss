@@ -1,0 +1,46 @@
+.container {
+    min-height: 100vh;
+    h2 {
+        text-align: center;
+        margin: 50px 0;
+    }
+    .inner {
+        width: 980px;
+        margin: auto;
+        .infoBox {
+            margin-bottom: 30px;
+            div {
+                margin-bottom: 15px;
+                &.titleBox {
+                    float: left;
+                    width: 50%;
+                }
+                &.projectBox {
+                    float: left;
+                    width: 50%;
+                }
+            }
+        }
+        .bold {
+            font-weight: 700;
+            font-size: 2.4rem;
+        }
+        .contentBox {
+            width: 100%;
+            min-height: 300px;
+            border: 1px solid #d9d9d9;
+            padding: 30px;
+        }
+        button {
+            margin-top: 30px;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            font-size: 1.2rem;
+            transition: 0.25s ease;
+            &:hover {
+                background-color: #333;
+                color: #fff;
+            }
+        }
+    }
+}

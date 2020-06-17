@@ -25,10 +25,15 @@
         <div class="container">
             <h2><span class="color">10/66 프로젝트</span> 이용 후기 작성</h2>
             <div class="inputBox">
+                <div class="selectProject">
+                    <label for="projectList">프로젝트 선택</label>
+                    <select name="" id="projectList"></select>
+                </div>
                 <label for="titleBox">TITLE</label>
                 <input type="text" id="titleBox">
                 <label for="contentBox">Content</label>
-                <input type="text" id="contentBox">
+                <textarea name="content" id="contentBox" cols="30" rows="10"></textarea>
+                <button id="okBtn">등록하기</button>
             </div>
         </div>
     </main>
